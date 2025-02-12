@@ -41,6 +41,7 @@ class _OrderScreenState extends State<OrderScreen> {
           isLoading = false;
         });
       } else {
+        _resetOrder();
         setState(() {
           error = 'Failed to load order data';
           isLoading = false;
@@ -185,8 +186,8 @@ class _OrderScreenState extends State<OrderScreen> {
                                 isExpanded: true,
                                 underline: const SizedBox(),
                                 items: const [
-                                  DropdownMenuItem(value: 'buyer', child: Text('Buyer')),
-                                  DropdownMenuItem(value: 'seller', child: Text('Seller')),
+                                  DropdownMenuItem(value: 'buyer', child: Text('John Buyer')),
+                                  DropdownMenuItem(value: 'seller', child: Text('Sarah Seller')),
                                 ],
                                 onChanged: (value) {
                                   if (value != null) {
@@ -341,31 +342,31 @@ class _OrderScreenState extends State<OrderScreen> {
                     const SizedBox(height: 8),
                     _buildSection('Buyer\'s instructions:', order?.transaction?.instructions ?? "-"),
                     const SizedBox(height: 32),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFFE74C3C),
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 24,
-                              vertical: 12,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                          ),
-                          child: const Text(
-                            'I\'ve received payment',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.end,
+                    //   children: [
+                    //     ElevatedButton(
+                    //       onPressed: () {},
+                    //       style: ElevatedButton.styleFrom(
+                    //         backgroundColor: const Color(0xFFE74C3C),
+                    //         padding: const EdgeInsets.symmetric(
+                    //           horizontal: 24,
+                    //           vertical: 12,
+                    //         ),
+                    //         shape: RoundedRectangleBorder(
+                    //           borderRadius: BorderRadius.circular(8),
+                    //         ),
+                    //       ),
+                    //       child: const Text(
+                    //         'I\'ve received payment',
+                    //         style: TextStyle(
+                    //           color: Colors.white,
+                    //           fontSize: 16,
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
                   ],
                 ),
               ),
